@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="cicd-mvc-ant" default="war">
 
+<property name="ant.build.javac.source" value="11"/>
+<property name="ant.build.javac.target" value="11"/>
+
 <path id="compile.classes">
 	<fileset dir="WebContent/WEB-INF/lib">
 		<include name="*.jar" />
@@ -18,7 +21,7 @@
 </target>
 
 <target name="compile" depends="init">
-	<javac source="11" target="11" includeantruntime="false" srcdir="src" destdir="build/classes" debug="true">
+	<javac includeantruntime="false" srcdir="src" destdir="build/classes" debug="true">
 		<classpath refid="compile.classes" />
 	</javac>
 </target>
